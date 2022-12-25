@@ -1,0 +1,19 @@
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: ${1:myapp}
+  spec:
+    replicas: ${2:<number>}
+    selector:
+      matchLabels:
+        app: ${1:myapp}
+    template:
+      metadata:
+        labels:
+          app: ${1:myapp}
+      spec:
+        containers:
+        - name: ${1:myapp}
+          image: ${3:<Image>}
+          ports:
+          - containerPort: ${4:<Port>}
