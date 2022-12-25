@@ -1,0 +1,17 @@
+  apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    name: ${1:myingress}
+    labels:
+      name: ${1:myingress}
+  spec:
+    rules:
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: ${2:<Service>}
+              port: 
+                number: ${3:<Port>}
