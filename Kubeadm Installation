@@ -1,8 +1,6 @@
--------------------------------------- Kubeadm Installation -------------------------------------- 
+---------------------------------------- Kubeadm Installation ------------------------------------------ 
 
-
-
--------------------------------------- Both Master & Worker Node --------------------------------------
+-------------------------------------- Both Master & Worker Node ---------------------------------------
 
 sudo apt update -y
 sudo apt install docker.io -y
@@ -17,18 +15,19 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 sudo apt update -y
 sudo apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y
 
-------------------------------------- Master Node --------------------------------------------- 
+--------------------------------------------- Master Node -------------------------------------------------- 
 sudo su
 kubeadm init
-
-------> Paste the Join command on worker node 
 
   mkdir -p $HOME/.kube
   sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
   
+------------------------------------------- Worker Node ------------------------------------------------ 
+sudo su
+-----> Paste the Join command on worker node 
 
-------------------------------------Deploy CNI on Master Node---------------------------------------
+---------------------------------------Deploy CNI on Master Node-----------------------------------------
 
 kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 
