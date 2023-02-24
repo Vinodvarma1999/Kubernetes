@@ -30,7 +30,7 @@ To simulate a failure, delete the pod by deleting the deployment that was used t
 
 ``` kubectl delete deployment example-deployment ```
 
-# Create a New Pod and Verify that the File Exists
+## Step 3: Create a New Pod and Verify that the File Exists
 
 1. Apply the same YAML file to create a new pod with a different name, but using the same PVC as before:
 
