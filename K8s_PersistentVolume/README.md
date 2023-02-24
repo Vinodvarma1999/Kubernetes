@@ -1,4 +1,4 @@
-# Performing Operations on a Kubernetes Cluster
+# Managing Data Persistence in Kubernetes Deployments with Persistent Volumes and Claims
 
 This guide will walk you through the process of creating a pod in a Kubernetes cluster, creating a file within that pod, deleting the pod, and verifying that the file still exists in a new pod that is created using the same deployment.
 
