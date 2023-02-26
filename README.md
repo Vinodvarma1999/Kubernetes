@@ -1,6 +1,6 @@
 # Kubernetes
 
-<img align="centre" alt="k8s" width=200 height=100 src="Images/k8s.jpg"> 
+<img align="centre" alt="k8s" width=200 height=200 src="Images/K8s.png"> 
 
 This repository contains YAML files and scripts for deploying and managing applications in a Kubernetes cluster.
 
