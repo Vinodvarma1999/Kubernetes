@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deploy
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: myapp
+ template:
+  metadata:
+   labels:
+    app: myapp
+  spec:
+   containers:
+   - name: myapp
+     image: ubuntu/apache2
+     ports:
+     - containerPort: 80
+
+     env:
+     - name: secretvalue
+       valueFrom:
+        secretRefKey:
+          name: my-secret
+          key: name
